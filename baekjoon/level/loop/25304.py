@@ -11,7 +11,7 @@ def solution():
     
     print('Yes' if results == x else 'No')
 
-def main():
+def main(): 
     solution()
 
 if __name__ == "__main__":
