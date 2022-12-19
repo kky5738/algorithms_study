@@ -1,5 +1,5 @@
 import sys
-
+sys.setrecursionlimit(10**6)
 def recur(num: int) -> int:
     if num < 1: return 0
     return num + recur(num-1)
