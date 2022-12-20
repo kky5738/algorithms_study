@@ -4,9 +4,11 @@ def solution():
     input = sys.stdin.readline
 
     while True:
-        a, b = map(int, input().split(' '))
-        # if a == '^Z':
-        #     break
+        try:
+            a, b = map(int, input().split(' '))
+        except ValueError:
+            break
+
         print(a+b)
 
 def main():
