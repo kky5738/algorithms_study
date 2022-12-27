@@ -5,15 +5,11 @@ def solution():
     
     for _ in range(28):
         x = int(sys.stdin.readline().rstrip())
-        # answer.pop(answer.index(x))
         answer.remove(x)
 
     sorted(answer)
     print(answer[0])
     print(answer[1])
-
-        
-
 
 if __name__ == '__main__':
     solution()
