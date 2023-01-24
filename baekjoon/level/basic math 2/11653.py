@@ -15,7 +15,7 @@ def solution():
             continue
         i += 1
 
-    for j in sorted(devided):
+    for j in devided:
         print(j)
 
 if __name__ == '__main__':
