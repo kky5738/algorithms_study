@@ -1,3 +1,4 @@
+# 백준 2751번 수 정렬하기2 merge_sort 구현
 import sys
 
 def main():
