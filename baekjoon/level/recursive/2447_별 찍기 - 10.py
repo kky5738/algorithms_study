@@ -5,17 +5,21 @@ def main():
     solution()
 
 def solution():
+    global n_pow
+    
     n = int(sys.stdin.readline().rstrip())
+    n_pow = n*n
     # for i in range(n):
         # print(f'{i}//3 = {i//3},  {i} % 3 = {i % 3}, {i} / 3 = {i / 3}')
     
-    print_star(n*n)
+    print_star(n_pow)
 
 def print_star(n):
-    if n < 0: return
-    if n-1 % 3 == 1:
+    global n_pow
+    if n == 0: return
+    if n % n_pow**0.5 == 0 and n != n_pow:
         print()
-        
+    # if n < n_pow // 3
     print('*', end='')
     return print_star(n-1)
 
@@ -23,3 +27,4 @@ def print_star(n):
 # 00 01 02 10 11
 if __name__ == '__main__':
     main()
+    
