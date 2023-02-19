@@ -9,18 +9,18 @@ def solution():
     n, m = map(int, sys.stdin.readline().rstrip().split(' '))
     cards = list(map(int, sys.stdin.readline().rstrip().split(' ')))
     combi = list(combinations(cards, 3))
-    result = sum(combi[0])
-    min_dist = abs(sum(combi[0]) - m)
-    
+    result = 0
+    plus = sum(combi[0])
+    min_dist = abs(m - sum(combi[0]))
+
     for (x, y, z) in combi:
-        condition = abs(x + y + z - m)
-        if condition == 0:
-            result = x + y + z
-            return print(result)
-        elif condition < min_dist:
-                min_dist = condition
-                result = x + y + z
-                
+        plus = x + y + z
+        
+        if plus == m: return print(plus)
+        elif plus < m and abs(m - plus) < min_dist:
+            min_dist = abs(m - plus)
+            result = plus
+
     print(result)
 
 if __name__ == '__main__':
