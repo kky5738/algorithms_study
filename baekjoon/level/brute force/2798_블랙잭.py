@@ -17,6 +17,7 @@ def solution():
         plus = x + y + z
         
         if plus == m: return print(plus)
+        
         elif plus < m and abs(m - plus) < min_dist:
             min_dist = abs(m - plus)
             result = plus
