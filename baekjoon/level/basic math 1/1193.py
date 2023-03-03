@@ -1,33 +1,31 @@
 # 백준 1193번 분수찾기
+
 import sys
 
 def solution():
     n = int(sys.stdin.readline().rstrip())
+    k = 0
     
-    for i in range(int(n**0.5), n+1):
-        s = (i*i + i)/2   # n(n+1) / 2
-        if s >= n:
-            level = i        
-            break
-    start_idx = int(((level - 1) * (1+(level-1))) / 2) + 1
+    for i in range(round(n**0.5)+1):
+        d1 = i*2 + 1
+        d2 = 4 if i % 2 == 0 else 2
+        k += 1 if i % 2 == 0 else int(d2*i)            
+        num = k
 
-    if level % 2 == 0:
-        x = 1
-        y = level
-        for _ in range(start_idx, n):
-            x += 1
-            y -= 1
-        answer = f'{x}/{y}'
-
-    else:
-        x = level
-        y = 1
-        for _ in range(start_idx, n):
-            x -= 1
-            y += 1
-        answer = f'{x}/{y}'
-
-    print(answer)
+        for j in range(int(n/2)):
+            add = 0
+            if i % 2 == 0:
+                if j % 2 == 0:
+                    add = int(d2*(j/2))
+                else:
+                    add = d1
+            elif i % 2 != 0:
+                if j % 2 == 0 and j != 0: 
+                    add = d1
+                elif j % 2 != 0:
+                    add = int(d2*j)
+            num += add
+            if num == n: return print(f'{i+1}/{j+1}')
 
 if __name__ == '__main__':
     solution()
