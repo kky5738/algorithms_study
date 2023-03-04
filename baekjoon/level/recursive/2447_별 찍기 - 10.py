@@ -16,21 +16,19 @@ def solution():
     print_star(n)
 
 def print_star(n):
-    global n_pow
-    if n == 0: return
+    result = []
     
-    for i in range(int(n_pow**0.5)):
-        if n % 3 == 2 and i % 3 == 1:
-            print(' ', end='')
-            continue
+    if n == 3:
+        first = '***'
+        sec = '* *'
+        rd = '***'
         
-        print('*', end='')
-    if n != 1:
+        
+        
+    else:
         print()
-    return print_star(n-1)
+        pass
 
-
-    
 # 00 01 02 10 11
 if __name__ == '__main__':
     main()
