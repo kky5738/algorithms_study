@@ -4,20 +4,10 @@ import sys
 
 def solution():
     n = int(sys.stdin.readline().rstrip())
-    print(9 * (4**(n-1)) - ((4**(n-1)) * 2 + 4**(n-2)))
-    print(9 * (4**(n-1)))
-    print(4**0)
+    answer = (2**n + 1)**2
+    print(answer)
+        
+    
 if __name__ == '__main__':
     solution()
     
-    """
-    
-    0 4 1
-    1 9 4
-    2 25(36) 16
-    3 9*16
-    
-    4 1 
-    9 4
-    25 16
-    """
