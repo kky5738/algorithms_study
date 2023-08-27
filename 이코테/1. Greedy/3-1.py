@@ -14,3 +14,13 @@ result += n // 10
 n %= 10
 
 print(result)
+
+"""
+    # better version
+    cash = [500, 100, 50, 10]
+    for coin in cash:
+        result += n // coin
+        n %- coin
+    
+    print(result)
+"""
