@@ -1,3 +1,4 @@
+# 백준 단계별로 풀기_스택, 큐, 덱_28278번 스택 2
 import sys
 
 stack = []
@@ -35,7 +36,7 @@ oper_dict = {
 }
 
 for _ in range(n):
-    command = sys.stdin.readline().rstrip()
+    command = sys.stdin.readline().rstrip().split()
     
     if command[0] == '1':
         oper_dict[command[0]](command[1])
