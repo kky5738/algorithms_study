@@ -9,21 +9,12 @@ result = []
 count = 0
 
 for index, value in enumerate(nums):
-    current = value
-    
-    if not stack:
-        result.append(0)
+    while stack and stack[-1][1] < value:
+        stack.pop()
+    if stack:
+        result.append(stack[-1][0])
     else:
-        if stack[-1][1] < current: # 수신 탑 찾기
-            while stack and stack[-1][1] <= current:
-                stack.pop()
-            
-            if stack:
-                result.append(stack[-1][0] + 1)
-            else:
-                result.append(index)
-        else:
-            result.append(index)
-    stack.append((index, current))
+        result.append(0)
+    stack.append((index+1, value))
     
 print(*result)
